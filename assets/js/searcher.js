@@ -83,9 +83,8 @@ function search(respuesta_json,respuesta_xml){
             loadProducts_json(url_json);
         }else{
             let byfiltre = respuesta_json.filter(item => (item.name.includes(texto))||(item.type.includes(texto)));
-            let byfiltre_xml = respuesta_xml.filter(item => (item.getElementsByTagName("name")[0].innerHTML.includes(texto)));
-            console.log(byfiltre_xml);
             data_json(byfiltre);
+            let byfiltre_xml = respuesta_xml.filter(item => (item.getElementsByTagName("name")[0].innerHTML.includes(texto)));
             data_xml(byfiltre_xml);
         }
     }); 
